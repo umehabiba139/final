@@ -1,12 +1,27 @@
-import React from 'react';
+import { createSlice } from '@reduxjs/toolkit';
 
-function DragonBooking() {
-  return (
-    <div>
-      <h1>Dragon Booking</h1>
-      {/* Logic to book dragons */}
-    </div>
-  );
-}
+const initialState = {
+  dragons: [],
+  loading: false,
+  error: null,
+};
 
-export default DragonBooking;
+const dragonsSlice = createSlice({
+  name: 'dragons',
+  initialState,
+  reducers: {
+    setDragons(state, action) {
+      state.dragons = action.payload;
+    },
+    setLoading(state, action) {
+      state.loading = action.payload;
+    },
+    setError(state, action) {
+      state.error = action.payload;
+    },
+    
+  },
+});
+
+export const { setDragons, setLoading, setError } = dragonsSlice.actions;
+export default dragonsSlice.reducer;
