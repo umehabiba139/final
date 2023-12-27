@@ -1,10 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Header from './components/Header';
 import Footer from './components/footer.js';
 
-import Missions from './pages/Missions';
-import DragonBooking from './pages/DragonBooking';
+import Missions from './features/Missions';
+import DragonBooking from './dragons/DragonBooking';
 
 function App() {
   return (

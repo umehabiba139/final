@@ -1,11 +1,14 @@
-import { combineReducers } from 'redux';
-import launchesReducer from './modules/launches';
-import rocketsReducer from './modules/rockets';
+import { configureStore } from '@reduxjs/toolkit';
+import missionsReducer from './missions/missionsSlice';
+import dragonsReducer from './dragons/dragonsSlice'; 
 
-const rootReducer = combineReducers({
-  launches: launchesReducer,
-  rockets: rocketsReducer,
-  // Other reducers if present
+const store = configureStore({
+  reducer: {
+    missions: missionsReducer,
+    dragons: dragonsReducer, 
+    
+  },
+
 });
 
-export default rootReducer;
+export default store;
